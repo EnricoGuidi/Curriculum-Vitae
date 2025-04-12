@@ -55,8 +55,3 @@ Questo repository contiene la documentazione e le versioni evolutive della web a
    - Python 3.9 (o versione superiore indicata in `requirements.txt`).
    - Un gestore di pacchetti Python (ad es. pip, poetry).
 
-2. **Installazione delle Dipendenze**  
-   Eseguire il seguente comando:
-   ```bash
-   pip install -r requirements.txt
-
