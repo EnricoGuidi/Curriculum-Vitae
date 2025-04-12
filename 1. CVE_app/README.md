@@ -39,8 +39,8 @@
 
 1. **Clona il progetto**
    ```bash
-   git clone https://github.com/tuo-username/InsightUp.git
-   cd InsightUp
+   git clone https://github.com/EnricoGuidi/Curriculum-Vitae
+   cd Curriculum-Vitae
 
 2. **Crea ambiente virtuale (opzionale ma consigliato)**
 
