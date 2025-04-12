@@ -1,0 +1,435 @@
+/* Definizione delle variabili per il tema */
+:root {
+    --primary-color: #1a2a6c;
+    --secondary-color: #00b809;
+    --accent-color: #40ff63;
+    --background-color: #f0f4ff;
+    --white-color: #ffffff;
+    --grey-color: #f7f9fb;
+    --dark-grey: #d2d5d7;
+}
+
+/* Reset e impostazioni di base */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    height: 130px;
+}
+
+.menu-icon {
+    font-size: 28px;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Animazione fade-in per i contenuti principali */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SEZIONE PROFILO */
+.profile-section {
+    padding: 50px 30px;
+    background: linear-gradient(180deg, var(--background-color) 0%, #d9e4ff 100%);
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+}
+
+.profile-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-text h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+.profile-text p {
+    margin: 5px 0;
+    line-height: 1.5;
+    color: #333;
+}
+
+.profile-text a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.intro {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/* PROFESSIONAL EXPERIENCE */
+.experience-section {
+    background-color: var(--grey-color);
+    padding: 60px 30px;
+}
+
+.experience-section h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.experience-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-left img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.card-right {
+    flex: 1;
+}
+
+.card-right h3 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.card-right p {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.card-right ul {
+    margin-left: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card-right ul ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+/* COMPETENZE PROFESSIONALI */
+.skills-section {
+    background-color: var(--white-color);
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skill-card {
+    background-color: var(--grey-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Nuove proprietà */
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.skill-card img {
+    /* Modifiche principali */
+    width: 180px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4; /* Bassa opacità per non coprire il testo */
+    z-index: 0; /* dietro al testo */
+    pointer-events: none; /* evita che l'immagine interferisca con interazioni */
+}
+
+.skill-card h3,
+.skill-card p {
+    position: relative;
+    z-index: 1; /* testo in primo piano */
+    background: transparent;
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.skill-card p {
+    font-size: 15px;
+    color: #333;
+}
+
+
+
+/* --------------- ULTERIORI INFORMAZIONI */
+/* 
+   SEZIONE: ULTERIORI INFORMAZIONI
+   Descrizione: Questa sezione contiene i riquadri informativi 
+   (card) che mostrano dettagli aggiuntivi (es. Patenti, Abilitazioni, etc.). */
+
+/* Contenitore principale della sezione "Ulteriori Informazioni" */
+.extra-info-section {
+    background-color: var(--dark-grey); /* Imposta il colore di sfondo usando una variabile predefinita */
+    padding: 60px 30px;                 /* Aggiunge spazio interno verticale e orizzontale */
+    max-width: 900px;                   /* Limita la larghezza massima per un layout ottimale */
+    margin: auto;                       /* Centra la sezione orizzontalmente nella pagina */
+}
+
+/* Titolo della sezione */
+.extra-info-section h2 {
+    text-align: center;                 /* Centra il titolo della sezione */
+    font-size: 28px;                    /* Imposta la dimensione del carattere */
+    color: var(--primary-color);        /* Usa il colore primario per il testo */
+    margin-bottom: 40px;                /* Spazio inferiore per distanziare il titolo dai contenuti */
+}
+
+/* Stile per ogni riquadro informativo (card) */
+.info-card {
+    background-color: var(--white-color);           /* Sfondo bianco per evidenziare il contenuto */
+    border-radius: 16px;                              /* Angoli arrotondati per un aspetto moderno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);        /* Aggiunge una leggera ombra per dare profondità */
+    padding: 25px;                                    /* Spazio interno per il contenuto della card */
+    margin-bottom: 30px;                              /* Spazio esterno inferiore tra le card */
+}
+
+/* 
+   CONTAINER DEL CONTENUTO DELLA CARD: TESTO + CAROUSEL
+   Utilizza il flexbox per disporre il testo e il carousel affiancati. */
+
+.info-card-content {
+    display: flex;                                    /* Dispone gli elementi in linea (colonne) */
+    flex-wrap: wrap;                                  /* Consente il wrapping su schermi piccoli */
+    gap: 20px;                                        /* Spazio fisso tra il testo e il carousel */
+}
+
+/* Colonna sinistra: Area del testo informativo */
+.info-text {
+    flex: 1;                                          /* Occupa lo spazio rimanente disponibile */
+    min-width: 200px;                                 /* Dimensione minima per garantire leggibilità */
+}
+
+/* Colonna destra: Carousel per le immagini (slider) */
+.info-slider {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: stretch;        /* riempie tutto in verticale */
+    justify-content: flex-end;   /* allinea a destra */
+    padding: 0;
+    background-color: transparent;
+}
+
+                              /* Permette posizionamenti assoluti in eventuali estensioni future */
+    /* background: #eee; */                           /* (Opzionale) Sfondo alternativo per evidenziare il carousel */
+
+/* Container interno del carousel che gestisce lo scorrimento orizzontale */
+.slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+
+/* Nascondi la scrollbar per browser basati su WebKit (Chrome, Safari, Opera) */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 
+   STILI PER LE IMMAGINI DEL CAROUSEL
+   Ogni immagine occupa la larghezza del contenitore e si allinea in modo centralizzato.*/
+   .slider-container img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+    border-radius: 0;
+    margin: 0;
+}
+
+
+
+/* Disabilitazione dell'effetto hover (nessuna trasformazione) */
+.slider-container img:hover {
+    transform: none;
+}
+
+/* 
+   STILI PER I TESTI ALL'INTERNO DELLA CARD */
+
+/* Stili dei titoli e testo */
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Paragrafi: stile corsivo, colore #555, e margine inferiore per separazione */
+.info-card p {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Liste: dimensioni, interlinea e colore aggiornati, con indentazione a sinistra */
+.info-card ul {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+/* Liste annidate: utilizza pallini cerchiati e ulteriore indentazione */
+.info-card ul ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* SOCIAL MEDIA LINKS */
+.social-media-section {
+    padding: 40px 20px;
+    background-color: var(--grey-color);
+    text-align: center;
+}
+
+.social-media-section h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-link img:hover {
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
