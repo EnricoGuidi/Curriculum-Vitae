@@ -170,6 +170,73 @@ header {
     margin-left: 20px;
 }
 
+
+/* —––––– I MIEI PROGETTI –––––— */
+.projects-section {
+    background-color: var(--white-color);
+    padding: 60px 30px;
+    text-align: center;
+  }
+  .projects-section h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+  }
+  
+  /* layout a griglia affine a “Competenze Professionali” */
+  .project-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  
+  /* card generica ripresa da .skill-card */
+  .project-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-decoration: none;   /* rimuove underline */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-button:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .project-button img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .project-button span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  /* DRIVE: sfondo arancione, testo nero */
+  .drive-button {
+    background-color: orange;
+    color: black;
+  }
+  
+  /* GITHUB: sfondo nero, testo bianco */
+  .github-button {
+    background-color: black;
+    color: white;
+  }
+  
+
+
+
+
+
+
 /* COMPETENZE PROFESSIONALI */
 .skills-section {
     background-color: var(--white-color);
