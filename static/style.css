@@ -54,7 +54,7 @@ header {
     }
 }
 
-/* SEZIONE PROFILO */
+/* ——— SEZIONE PROFILO ——— */
 .profile-section {
     padding: 50px 30px;
     background: linear-gradient(180deg, var(--background-color) 0%, #d9e4ff 100%);
@@ -62,6 +62,7 @@ header {
 
 .profile-container {
     display: flex;
+    flex-wrap: wrap;             /* ← abilita il wrapping */
     align-items: flex-start;
     gap: 30px;
     max-width: 1000px;
@@ -74,13 +75,15 @@ header {
 }
 
 .profile-image img {
-    width: 150px;
+    width: 100%;                 /* ← si adatta al contenitore */
+    max-width: 150px;            /* ← non supera i 150px */
     height: auto;
     border-radius: 12px;
 }
 
 .profile-text {
     flex: 1;
+    min-width: 200px;            /* ← garantisce un minimo di larghezza */
 }
 
 .profile-text h1 {
@@ -105,7 +108,10 @@ header {
     text-align: justify;
 }
 
-/* PROFESSIONAL EXPERIENCE */
+
+
+
+/* ——— PROFESSIONAL EXPERIENCE ——— */
 .experience-section {
     background-color: var(--grey-color);
     padding: 60px 30px;
@@ -119,15 +125,16 @@ header {
 }
 
 .experience-card {
-    background-color: var(--white-color);
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     display: flex;
+    flex-wrap: wrap;             /* ← abilita il wrapping su mobile */
     gap: 30px;
     padding: 30px;
     max-width: 1000px;
     margin: 30px auto;
     align-items: flex-start;
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -136,15 +143,24 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+.card-left {
+    width: 100%;
+    max-width: 120px;            /* ← fissa un max-width */
+}
+
 .card-left img {
-    width: 120px;
+    display: block;
+    width: 100%;                 /* ← si adatta al contenitore */
+    max-width: 120px;            /* ← non supera i 120px */
     height: auto;
+    margin: 0 auto 15px;         /* ← centra in colonna */
     border-radius: 12px;
     object-fit: cover;
 }
 
 .card-right {
     flex: 1;
+    min-width: 200px;            /* ← evita che il testo si schiacci troppo */
 }
 
 .card-right h3 {
@@ -169,6 +185,7 @@ header {
     list-style-type: circle;
     margin-left: 20px;
 }
+
 
 
 /* —––––– I MIEI PROGETTI –––––— */
